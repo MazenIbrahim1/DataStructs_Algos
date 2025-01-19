@@ -11,8 +11,9 @@ public class ArrayList {
     }
     
     // Method to add an element to the ArrayList
+    // Worst case time complexity: O(n)
+    // Average case time complexity: O(1)
     public void add(int element) {
-        // Worst case time complexity: O(n)
         // Doubling the size of the array if it is full
         if(size == array.length) {
             int[] temp = new int[size*2];
@@ -26,7 +27,7 @@ public class ArrayList {
         // Adding the element to the array
         array[size++] = element;
     }
-    
+
     public static void main(String[] args) {
         
     }
