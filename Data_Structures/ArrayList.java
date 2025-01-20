@@ -29,6 +29,7 @@ public class ArrayList {
     }
 
     // Method to access an element from the ArrayList
+    // Access: O(1)
     public int get(int index) {
         if(index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
@@ -37,10 +38,12 @@ public class ArrayList {
     }
 
     // Method to remove an element from the ArrayList
+    // Deletion: O(n)
     public void remove(int index) {
         if(index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
+        // Fix array
         for(int i = index; i < size-1; i++) {
             array[i] = array[i+1];
         }
