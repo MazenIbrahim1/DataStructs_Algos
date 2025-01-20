@@ -28,6 +28,25 @@ public class ArrayList {
         array[size++] = element;
     }
 
+    // Method to access an element from the ArrayList
+    public int get(int index) {
+        if(index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+        return array[index];
+    }
+
+    // Method to remove an element from the ArrayList
+    public void remove(int index) {
+        if(index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+        for(int i = index; i < size-1; i++) {
+            array[i] = array[i+1];
+        }
+        size--;
+    }
+
     public static void main(String[] args) {
         
     }
