@@ -12,6 +12,7 @@ public class ArrayList<T> {
     }
     
     // Method to add an element to the ArrayList
+    // Addition: -
     // Worst case time complexity: O(n)
     // Average case time complexity: O(1)
     @SuppressWarnings("unchecked")
@@ -50,6 +51,17 @@ public class ArrayList<T> {
             array[i] = array[i+1];
         }
         array[--size] = null;
+    }
+
+    // Method to search for an element in the ArrayList
+    // Search: O(n)
+    public T search(T element) {
+        for(int i = 0; i < size; i++) {
+            if(array[i] == element) {
+                return array[i];
+            }
+        }
+        return null;
     }
 
     // Getter method for the size of the array
