@@ -56,8 +56,12 @@ public class ArrayList<T> {
     // Method to search for an element in the ArrayList
     // Search: O(n)
     public T search(T element) {
+        if (element == null) {
+            throw new IllegalArgumentException("Null values are not allowed in the array list.");
+        }
+        
         for(int i = 0; i < size; i++) {
-            if(array[i] == element) {
+            if(array[i].equals(element)) {
                 return array[i];
             }
         }
