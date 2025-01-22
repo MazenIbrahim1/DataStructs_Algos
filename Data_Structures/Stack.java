@@ -50,8 +50,8 @@ public class Stack<T> {
     // Method to push an item onto the stack
     // Addition: O(1)
     public void push(T item) {
-        if(item == null) {
-            return;
+        if (item == null) {
+            throw new IllegalArgumentException("Null values are not allowed in the stack.");
         }
 
         // Node reference of the item
@@ -85,6 +85,9 @@ public class Stack<T> {
     // Method that returns the data of the top node
     // Peek: O(1)
     public T peek() {
+        if (top == null) {
+            throw new EmptyStackException();
+        }
         return top.data;
     }
 
@@ -99,7 +102,7 @@ public class Stack<T> {
     public int search(T item) {
         StackNode cursor = top;
         for(int i = 0; i < size; i++) {
-            if(cursor.data == item) {
+            if(cursor.data.equals(item)) {
                 return i;
             }
             cursor = cursor.next;
@@ -108,6 +111,78 @@ public class Stack<T> {
     }
 
     public static void main(String[] args) {
+        // Create a stack of integers
+        Stack<Integer> stack = new Stack<>();
 
+        System.out.println("### TESTING STACK OPERATIONS ###");
+
+        // Test isEmpty() on an empty stack
+        System.out.println("Stack is empty: " + stack.isEmpty()); // Expected: true
+
+        // Test size() on an empty stack
+        System.out.println("Stack size: " + stack.size()); // Expected: 0
+
+        // Test peek() on an empty stack
+        try {
+            stack.peek();
+        } catch (EmptyStackException e) {
+            System.out.println("Peek on empty stack: " + e.getMessage());
+        }
+
+        // Test pop() on an empty stack
+        try {
+            stack.pop();
+        } catch (EmptyStackException e) {
+            System.out.println("Pop on empty stack: " + e.getMessage());
+        }
+
+        // Push elements onto the stack
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println("Pushed 10, 20, 30 onto the stack.");
+        System.out.println("Stack is empty: " + stack.isEmpty()); // Expected: false
+        System.out.println("Stack size: " + stack.size()); // Expected: 3
+
+        // Peek the top element
+        System.out.println("Top element (peek): " + stack.peek()); // Expected: 30
+
+        // Pop elements from the stack
+        System.out.println("Popped element: " + stack.pop()); // Expected: 30
+        System.out.println("Popped element: " + stack.pop()); // Expected: 20
+        System.out.println("Stack size after popping twice: " + stack.size()); // Expected: 1
+
+        // Search for elements in the stack
+        System.out.println("Index of 10 in the stack: " + stack.search(10)); // Expected: 0
+        System.out.println("Index of 30 in the stack: " + stack.search(30)); // Expected: -1 (not found)
+
+        // Push null (test error handling)
+        try {
+            stack.push(null);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Push null: " + e.getMessage());
+        }
+
+        // Push more elements
+        stack.push(40);
+        stack.push(50);
+
+        System.out.println("Pushed 40, 50 onto the stack.");
+        System.out.println("Stack size: " + stack.size()); // Expected: 3
+
+        // Peek the top element again
+        System.out.println("Top element (peek): " + stack.peek()); // Expected: 50
+
+        // Pop remaining elements
+        System.out.println("Popped element: " + stack.pop()); // Expected: 50
+        System.out.println("Popped element: " + stack.pop()); // Expected: 40
+        System.out.println("Popped element: " + stack.pop()); // Expected: 10
+
+        // Final check on empty stack
+        System.out.println("Stack is empty: " + stack.isEmpty()); // Expected: true
+        System.out.println("Stack size: " + stack.size()); // Expected: 0
+
+        System.out.println("All tests passed successfully!");
     }
 }
