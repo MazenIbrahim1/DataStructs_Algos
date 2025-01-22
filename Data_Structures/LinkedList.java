@@ -141,8 +141,8 @@ public class LinkedList<T> {
         return true;
     }
 
-    // Searching/Accessing a node with a specific type of data
-    // Search/Access: O(n)
+    // Accessing a node at an index
+    // Access: O(n)
     public Node get(int index) {
         if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException("Index is out of bounds");
@@ -162,6 +162,24 @@ public class LinkedList<T> {
         }
 
         return cursor;
+    }
+
+    // Method to search for a node with a specific data
+    // Search: O(n)
+    public Node search(T data) {
+        if(data == null) {
+            throw new IllegalArgumentException("Null values are not allowed in the stack.");
+        }
+
+        cursor = head;
+        while(cursor.next != null) {
+            if(cursor.data.equals(data)) {
+                return cursor;
+            }
+            cursor = cursor.next;
+        }
+
+        return null;
     }
 
     // Method to check if the list is empty
