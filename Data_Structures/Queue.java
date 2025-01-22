@@ -1,6 +1,7 @@
 package Data_Structures;
 
 import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 
 // FIFO First In First Out
 // Implemented using a linked list
@@ -35,22 +36,38 @@ public class Queue<T> {
     }
 
     private int size;
-    private QueueNode top;
+    private QueueNode first;
 
     public Queue() {
         this.size = 0;
-        this.top = null;
+        this.first = null;
     }
 
     // Insertion: O(1)
     public void enqueue(T data) {
+        if (data == null) {
+            throw new IllegalArgumentException("Null values are not allowed in the stack.");
+        }
+
+        QueueNode newNode = new QueueNode(data);
+        if(size == 0) {
+            first = newNode;
+        } else {
+            newNode.next = first;
+            first = newNode;
+        }
         size++;
     }
 
     // Deletion: O(1)
     public T dequeue() {
+        if(first == null) {
+            throw new NoSuchElementException("Nothing in the queue");
+        }
+        T temp = first.data;
+        first = first.next;
         size--;
-        return null;
+        return temp;
     }
 
     // Method to return the size of the queue
@@ -58,13 +75,13 @@ public class Queue<T> {
         return size;
     }
 
-    // Method that returns the data of the top node
+    // Method that returns the data of the first node
     // Peek: O(1)
     public T peek() {
-        if (top == null) {
+        if (first == null) {
             throw new EmptyStackException();
         }
-        return top.data;
+        return first.data;
     }
 
     // Method to check if the stack is empty
