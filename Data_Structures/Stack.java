@@ -48,7 +48,7 @@ public class Stack<T> {
     }
 
     // Method to push an item onto the stack
-    // Addition: O(1)
+    // Insertion: O(1)
     public void push(T item) {
         if (item == null) {
             throw new IllegalArgumentException("Null values are not allowed in the stack.");

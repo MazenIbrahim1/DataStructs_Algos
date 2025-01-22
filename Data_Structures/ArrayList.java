@@ -12,7 +12,7 @@ public class ArrayList<T> {
     }
     
     // Method to add an element to the ArrayList
-    // Addition: -
+    // Insertion: -
     // Worst case time complexity: O(n)
     // Average case time complexity: O(1)
     @SuppressWarnings("unchecked")
