@@ -48,20 +48,26 @@ public class Tree {
 
     // Adding a node to the BST
     public void add(int data) {
-
+        
     }
 
     // Traversals
     public void preOrderTraversal(TreeNode node) {
-        
+        // Node
+        // Left children
+        // Right children
     }
 
     public void inOrderTraversal(TreeNode node) {
-        
+        // Left children
+        // Node
+        // Right children
     }
 
     public void postOrderTraversal(TreeNode node) {
-        
+        // Left children
+        // Right children
+        // Node
     }
 
     // Searching for a node
