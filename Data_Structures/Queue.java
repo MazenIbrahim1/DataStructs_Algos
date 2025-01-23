@@ -135,5 +135,22 @@ public class Queue<T> {
         // Dequeue last element and test empty queue
         System.out.println("Dequeue: " + queue.dequeue()); // Output: 3
         System.out.println("IsEmpty: " + queue.isEmpty()); // Output: true
+        // Edge Case: Dequeue or Peek from empty queue
+        try {
+            queue.dequeue();
+        } catch (NoSuchElementException e) {
+            System.out.println("Dequeue on empty queue: " + e.getMessage()); // Expected
+        }
+
+        try {
+            queue.peek();
+        } catch (NoSuchElementException e) {
+            System.out.println("Peek on empty queue: " + e.getMessage()); // Expected
+        }
+
+        // Edge Case: Search for nonexistent element
+        queue.enqueue(4);
+        queue.enqueue(5);
+        System.out.println("Search for 6: " + (queue.search(6))); // Output: -1
     }
 }
