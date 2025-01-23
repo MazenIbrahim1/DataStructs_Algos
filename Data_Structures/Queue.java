@@ -1,6 +1,5 @@
 package Data_Structures;
 
-import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 // FIFO First In First Out
@@ -37,12 +36,15 @@ public class Queue<T> {
 
     private int size;
     private QueueNode first;
+    private QueueNode last;
 
     public Queue() {
         this.size = 0;
         this.first = null;
+        this.last = null;
     }
 
+    // Adding a node to the end as if it is a line at a register
     // Insertion: O(1)
     public void enqueue(T data) {
         if (data == null) {
@@ -50,15 +52,17 @@ public class Queue<T> {
         }
 
         QueueNode newNode = new QueueNode(data);
-        if(size == 0) {
-            first = newNode;
-        } else {
-            newNode.next = first;
+        if(last != null) {
+            last.next = newNode;
+        }
+        last = newNode;
+        if(first == null) {
             first = newNode;
         }
         size++;
     }
 
+    // First node that was in the queue is removed
     // Deletion: O(1)
     public T dequeue() {
         if(first == null) {
@@ -79,9 +83,25 @@ public class Queue<T> {
     // Peek: O(1)
     public T peek() {
         if (first == null) {
-            throw new EmptyStackException();
+            throw new NoSuchElementException("Queue is empty");
         }
         return first.data;
+    }
+
+    // Method to search for a node with a specific data and returns its index
+    // Search: O(n)
+    public int search(T data) {
+        if (data == null) {
+            throw new NoSuchElementException("Cant search for null data");
+        }
+        QueueNode temp = first; 
+        for(int i = 0; i < size; i++) {
+            if(temp.data.equals(data)) {
+                return i;
+            }
+            temp = temp.next;
+        }
+        return -1;
     }
 
     // Method to check if the stack is empty
@@ -91,6 +111,29 @@ public class Queue<T> {
     }
 
     public static void main(String[] args) {
+        Queue<Integer> queue = new Queue<>();
+        
+        // Test enqueue
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
 
+        // Test peek
+        System.out.println("Peek: " + queue.peek()); // Output: 1
+        System.out.println("Search: " + queue.search(3)); // Output: 2
+
+        // Test dequeue
+        System.out.println("Dequeue: " + queue.dequeue()); // Output: 1
+        System.out.println("Dequeue: " + queue.dequeue()); // Output: 2
+
+        // Test size
+        System.out.println("Size: " + queue.size()); // Output: 1
+
+        // Test isEmpty
+        System.out.println("IsEmpty: " + queue.isEmpty()); // Output: false
+
+        // Dequeue last element and test empty queue
+        System.out.println("Dequeue: " + queue.dequeue()); // Output: 3
+        System.out.println("IsEmpty: " + queue.isEmpty()); // Output: true
     }
 }
