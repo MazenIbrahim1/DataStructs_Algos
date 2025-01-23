@@ -48,26 +48,45 @@ public class Tree {
 
     // Adding a node to the BST
     public void add(int data) {
-        
+
     }
 
     // Traversals
     public void preOrderTraversal(TreeNode node) {
+        if (node == null) {
+            return;
+        }
         // Node
+        System.out.println(node.data + " ");
         // Left children
+        preOrderTraversal(node.left);
         // Right children
+        preOrderTraversal(node.right);
     }
 
     public void inOrderTraversal(TreeNode node) {
+        if (node == null) {
+            return;
+        }
         // Left children
+        inOrderTraversal(node.left);
         // Node
+        System.out.println(node.data + " ");
         // Right children
+        inOrderTraversal(node.right);
+        
     }
 
     public void postOrderTraversal(TreeNode node) {
+        if (node == null) {
+            return;
+        }
         // Left children
+        postOrderTraversal(node.left);
         // Right children
+        postOrderTraversal(node.right);
         // Node
+        System.out.println(node.data + " ");
     }
 
     // Searching for a node
