@@ -1,19 +1,20 @@
 package Data_Structures;
 
-public class Tree<T> {
+// Binary Search Tree Implementation (Only Integers)
+public class Tree {
     public class TreeNode {
-        private T data;
+        private int data;
         private TreeNode left;
         private TreeNode right;
 
-        public TreeNode(T data) {
+        public TreeNode(int data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
 
         // Getters
-        public T getData() {
+        public int getData() {
             return data;
         }
 
@@ -26,7 +27,7 @@ public class Tree<T> {
         }
 
         // Setters
-        public void setData(T newData) {
+        public void setData(int newData) {
             data = newData;
         }
 
@@ -39,4 +40,32 @@ public class Tree<T> {
         }
     }
     
+    private TreeNode root;
+
+    public Tree(int rootData) {
+        root.data = rootData;
+    }
+
+    // Adding a node to the BST
+    public void add(int data) {
+
+    }
+
+    // Traversals
+    public void preOrderTraversal(TreeNode node) {
+        
+    }
+
+    public void inOrderTraversal(TreeNode node) {
+        
+    }
+
+    public void postOrderTraversal(TreeNode node) {
+        
+    }
+
+    // Searching for a node
+    public boolean search(int data) {
+        return false;
+    }
 }
