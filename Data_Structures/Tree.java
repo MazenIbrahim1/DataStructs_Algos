@@ -48,7 +48,22 @@ public class Tree {
 
     // Adding a node to the BST
     public void add(int data) {
-        
+        root = addRecursive(root, data);
+    }
+
+    // Helper method for adding a node
+    private TreeNode addRecursive(TreeNode node, int data) {
+        if (node == null) {
+            return new TreeNode(data);
+        }
+
+        if (data < node.data) {
+            node.left = addRecursive(node.left, data);
+        } else if (data > node.data) {
+            node.right = addRecursive(node.right, data);
+        }
+        // If data == node.data, do nothing (no duplicates in BST).
+        return node;
     }
 
     // Removing a node from the BST
