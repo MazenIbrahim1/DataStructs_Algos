@@ -47,6 +47,8 @@ public class Tree {
     }
 
     // Adding a node to the BST
+    // Best case:   O(log n)
+    // Worst case:  O(n)
     public void add(int data) {
         root = addRecursive(root, data);
     }
