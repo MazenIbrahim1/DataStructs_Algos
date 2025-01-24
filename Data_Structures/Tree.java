@@ -69,6 +69,8 @@ public class Tree {
     }
 
     // Removing a node from the BST
+    // Best case:   O(log n)
+    // Worst case:  O(n)
     public void remove(int data) {
 
     }
