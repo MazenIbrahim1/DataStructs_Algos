@@ -12,6 +12,10 @@ public class Graph<T> {
     }
 
     public void addEdge() {
+
+    }
+
+    public static void main(String[] args) {
         
     }
 }
