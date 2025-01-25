@@ -1,10 +1,17 @@
 package Data_Structures;
 
-public class Graph {
-    public class GraphNode {
-        private int data;
-        private GraphNode[] children;
+import java.util.*;
+import java.util.LinkedList;
 
+// Using a hashmap
+public class Graph<T> {
+    private Map<T, List<T> > map = new HashMap<>();
+
+    public void addVertex(T vertex) {
+        map.put(vertex, new LinkedList<>());
+    }
+
+    public void addEdge() {
         
     }
 }
