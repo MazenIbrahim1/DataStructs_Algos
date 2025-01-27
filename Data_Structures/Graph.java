@@ -54,6 +54,17 @@ public class Graph<T> {
         return false;
     }
 
+    // Remove a vertex from the graph
+    public void removeVertex(T vertex) {
+
+    }
+    
+    // Remove an edge between two vertices
+    public void removeEdge(T src, T dest) {
+
+    }
+
+
     public static void main(String[] args) {
 
     }
