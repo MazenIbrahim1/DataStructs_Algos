@@ -68,8 +68,14 @@ public class Graph<T> {
     public void removeEdge(T src, T dest) {
         if(hasVertex(src) && hasVertex(dest)) {
             map.get(src).remove(dest);
+            map.get(dest).remove(src);
         }
     }
+
+    // BFS
+
+    
+    // DFS
 
     public static void main(String[] args) {
 
