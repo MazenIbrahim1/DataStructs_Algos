@@ -9,10 +9,12 @@ public class Graph<T> {
     // E.G. (A : B, E, L, C)
     private Map<T, List<T> > map = new HashMap<>();
 
+    // Adding a vertex to the graph starting with 0 edges
     public void addVertex(T vertex) {
         map.put(vertex, new LinkedList<>());
     }
 
+    // Adding an edge 
     public void addEdge(T source, T destination, boolean bidirectional) {
         if (!map.containsKey(source)) {
             addVertex(source);
@@ -31,6 +33,25 @@ public class Graph<T> {
     // Making the default value of bidirectional = true
     public void addEdge(T source, T destination) {
         addEdge(source, destination, true);
+    }
+
+    // Vertex Count of graph size
+    public int getVertexCount() {
+        return map.keySet().size();
+    }
+
+    // Check if a vertex exists in the graph
+    public boolean hasVertex(T vertex) {
+        return map.containsKey(vertex);
+    }
+
+    // Checks if an edge between two vertices exist
+    public boolean hasEdge(T src, T dest) {
+        // Check if vertices exist
+        if(hasVertex(src) && hasVertex(dest)) {
+            return map.get(src).contains(dest) ;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
