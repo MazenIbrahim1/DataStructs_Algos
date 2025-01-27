@@ -57,6 +57,11 @@ public class Graph<T> {
     // Remove a vertex from the graph
     public void removeVertex(T vertex) {
         map.remove(vertex);
+
+        // Remove any edges pointing to this vertex from other vertices
+        for (T key : map.keySet()) {
+            map.get(key).remove(vertex);
+        }
     }
 
     // Remove an edge between two vertices
