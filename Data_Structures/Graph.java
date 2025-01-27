@@ -79,7 +79,7 @@ public class Graph<T> {
         }
     }
 
-    // BFS
+    // BFS --> Queue
     // O(V + E)
     public void bfs(T start) {
         if (!hasVertex(start)) {
@@ -105,11 +105,31 @@ public class Graph<T> {
         }
     }
 
-    // DFS
+    // DFS --> Stack
     // O(V + E)
     public void dfs(T start) {
         if (!hasVertex(start)) {
             return;
+        }
+
+        Set<T> visited = new HashSet<>();
+        Stack<T> stack = new Stack<>();
+
+        stack.push(start);
+
+        while (!stack.isEmpty()) {
+            T vertex = stack.pop();
+
+            if (!visited.contains(vertex)) {
+            visited.add(vertex);
+            System.out.print(vertex + " ");
+
+            for (T neighbor : map.get(vertex)) {
+                if (!visited.contains(neighbor)) {
+                stack.push(neighbor);
+                }
+            }
+            }
         }
     }
 
