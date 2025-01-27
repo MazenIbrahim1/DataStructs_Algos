@@ -56,14 +56,15 @@ public class Graph<T> {
 
     // Remove a vertex from the graph
     public void removeVertex(T vertex) {
-
+        map.remove(vertex);
     }
-    
+
     // Remove an edge between two vertices
     public void removeEdge(T src, T dest) {
-
+        if(hasVertex(src) && hasVertex(dest)) {
+            map.get(src).remove(dest);
+        }
     }
-
 
     public static void main(String[] args) {
 
