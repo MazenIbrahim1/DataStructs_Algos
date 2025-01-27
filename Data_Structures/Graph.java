@@ -5,6 +5,8 @@ import java.util.LinkedList;
 
 // Using a hashmap
 public class Graph<T> {
+    // (Vertex : List of edges)
+    // E.G. (A : B, E, L, C)
     private Map<T, List<T> > map = new HashMap<>();
 
     public void addVertex(T vertex) {
@@ -16,6 +18,6 @@ public class Graph<T> {
     }
 
     public static void main(String[] args) {
-        
+
     }
 }
