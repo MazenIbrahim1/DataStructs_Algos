@@ -1,4 +1,4 @@
 # Binary Search Algorithm
 
-def binary_search(target):
+def binary_search(arr, target):
     pass
