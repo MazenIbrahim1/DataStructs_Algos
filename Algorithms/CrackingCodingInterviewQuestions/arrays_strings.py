@@ -4,11 +4,12 @@
 # Implement an algorithm to determine if a string has all unique characters. What if you
 # cannot use additional data structures?
 def isUnique(string):
-    # Using a set data structure --> O(n)
+    # Time and Space --> O(n)
     return len(string) == len(set(string))
 
+# Brute Force
 def isUnique2(string):
-    # Without using a data structure --> O(n^2)
+    # Time --> O(n^2)
     for i in range(len(string)):
         for j in range(i+1, len(string)):
             if string[i] == string[j]:
@@ -19,7 +20,8 @@ def isUnique2(string):
 # 1.2 -- Check Permutations
 # Given two strings, write a method to determine if one is a permutation of the other.
 def isPermutation(string1, string2):
-    pass
+    # O(n log n)
+    return sorted(string1) == sorted(string2)
 
 
 # 1.3 -- URLify 
