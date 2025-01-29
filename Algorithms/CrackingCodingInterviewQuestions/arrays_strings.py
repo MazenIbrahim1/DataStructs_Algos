@@ -23,6 +23,10 @@ def isPermutation(string1, string2):
     # O(n log n)
     return sorted(string1) == sorted(string2)
 
+# Optimized Version
+def isPermutation2(string1, string2):
+    pass
+
 
 # 1.3 -- URLify 
 # Write a method to replace all spaces in a string with '%20'. You may assume that the string
