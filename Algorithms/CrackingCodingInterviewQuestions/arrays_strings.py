@@ -21,10 +21,14 @@ def isUnique2(string):
 # Given two strings, write a method to determine if one is a permutation of the other.
 def isPermutation(string1, string2):
     # O(n log n)
+    if(len(string1) != len(string2)):
+        return False
     return sorted(string1) == sorted(string2)
 
 # Optimized Version
 def isPermutation2(string1, string2):
+    if(len(string1) != len(string2)):
+        return False
     pass
 
 
