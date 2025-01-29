@@ -29,3 +29,25 @@ def isPermutation(string1, string2):
 # perform this operation in place.)
 def URLify(string):
     pass
+
+
+# Main 
+def main():
+    # Test isUnique and isUnique2
+    test_strings = ["abcdef", "aabbcc", "123456", "112233"]
+    for s in test_strings:
+        print(f"isUnique('{s}'): {isUnique(s)}")
+        print(f"isUnique2('{s}'): {isUnique2(s)}")
+
+    # Test isPermutation
+    test_pairs = [("abc", "bca"), ("abc", "def"), ("123", "321"), ("123", "456")]
+    for s1, s2 in test_pairs:
+        print(f"isPermutation('{s1}', '{s2}'): {isPermutation(s1, s2)}")
+
+    # Test URLify
+    test_urls = [("Mr John Smith    ", 13), ("Hello World  ", 11)]
+    for s, true_length in test_urls:
+        print(f"URLify('{s}', {true_length}): {URLify(s[:true_length])}")
+
+if __name__ == "__main__":
+    main()
