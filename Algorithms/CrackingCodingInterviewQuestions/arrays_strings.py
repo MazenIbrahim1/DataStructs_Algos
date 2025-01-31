@@ -25,11 +25,21 @@ def isPermutation(string1: str, string2: str):
         return False
     return sorted(string1) == sorted(string2)
 
-# Optimized Version
+# Optimized Version --> O(n)
 def isPermutation2(string1, string2):
     if(len(string1) != len(string2)):
         return False
-    pass
+    # Freq counter
+    counter = {}
+    for letter in string1:
+        counter[letter] = counter.get(letter, 0) + 1
+
+    for letter in string2:
+        if letter not in counter or counter[letter] == 0:
+            return False
+        counter[letter] -= 1
+    
+    return True
 
 
 # 1.3 -- URLify 
@@ -61,6 +71,7 @@ def main():
     test_pairs = [("abc", "bca"), ("abc", "def"), ("123", "321"), ("123", "456")]
     for s1, s2 in test_pairs:
         print(f"isPermutation('{s1}', '{s2}'): {isPermutation(s1, s2)}")
+        print(f"isPermutation2('{s1}', '{s2}'): {isPermutation2(s1, s2)}")
 
     # Test URLify
     test_urls = [("Mr John Smith    ", 13), ("Hello World  ", 11)]
