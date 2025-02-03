@@ -1,5 +1,5 @@
 # Bubble Sort
-# Time Complexity
+# Time Complexity: O(n^2)
 
 def bubble_sort(lst):
     pass

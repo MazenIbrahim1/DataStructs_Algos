@@ -1,5 +1,5 @@
 # Merge Sort
-# Time Complexity
+# Time Complexity: O(n log n)
 
 def merge_sort(lst):
     pass
