@@ -9,6 +9,11 @@ def dfs(node):
 
     visited.add(node)
     stack.append(node)
+    while stack:
+        current = stack.pop()
+        print('Vertex:', current) 
 
-    while len(stack) != 0:
-        pass
+        for neighbor in current.neighbors:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                stack.append(neighbor)

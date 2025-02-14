@@ -10,5 +10,11 @@ def bfs(node) -> None:
     visited.add(node)
     queue.append(node)
 
-    while len(queue) != 0:
-        pass
+    while queue:
+        current = queue.pop(0)
+        print('Vertex:', current)
+
+        for neighbor in current.neighbors:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
