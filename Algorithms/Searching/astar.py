@@ -1,0 +1,2 @@
+def aStar(node):
+    pass
