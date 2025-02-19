@@ -12,6 +12,12 @@ def route(graph, node1, node2):
 def minimal_tree(arr):
     pass
 
+# 4.3 List of Depths
+# Given a binary tree, design an algorithm which creates a linked list of all the nodes
+# at each depth
+def list_of_depths(tree):
+    pass
+
 # Main
 def main():
     pass
