@@ -33,3 +33,17 @@ def mergeAlternately(self, word1: str, word2: str) -> str:
     
     return result
 
+# Best Time to Buy and Sell Stock
+def maxProfit(self, prices: List[int]) -> int:
+    buy = float('inf')
+    sell = 0
+
+    for i in range(len(prices)):
+        if prices[i] < buy:
+            buy = prices[i]
+
+        profit = prices[i] - buy
+        if profit > sell:
+            sell = profit
+
+    return sell
