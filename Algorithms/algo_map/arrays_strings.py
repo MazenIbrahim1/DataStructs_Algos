@@ -2,7 +2,7 @@
 from typing import List
 
 # Number Closest to Zero
-def findClosestNumber(self, nums: List[int]) -> int:
+def findClosestNumber(nums: List[int]) -> int:
     if len(nums) == 1:
         return nums[0]
     
@@ -17,7 +17,7 @@ def findClosestNumber(self, nums: List[int]) -> int:
     return result
 
 # Merge Strings Alternately
-def mergeAlternately(self, word1: str, word2: str) -> str:
+def mergeAlternately(word1: str, word2: str) -> str:
     length = max(len(word1), len(word2))
 
     result = ""
@@ -34,7 +34,7 @@ def mergeAlternately(self, word1: str, word2: str) -> str:
     return result
 
 # Best Time to Buy and Sell Stock
-def maxProfit(self, prices: List[int]) -> int:
+def maxProfit(prices: List[int]) -> int:
     buy = float('inf')
     sell = 0
 
