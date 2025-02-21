@@ -3,6 +3,8 @@ from typing import List
 
 # Number Closest to Zero
 def findClosestNumber(nums: List[int]) -> int:
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     if len(nums) == 1:
         return nums[0]
     
@@ -18,6 +20,8 @@ def findClosestNumber(nums: List[int]) -> int:
 
 # Merge Strings Alternately
 def mergeAlternately(word1: str, word2: str) -> str:
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     length = max(len(word1), len(word2))
 
     result = ""
@@ -33,8 +37,18 @@ def mergeAlternately(word1: str, word2: str) -> str:
     
     return result
 
+# Roman to Integer
+def romanToInt(s: str) -> int:
+    pass
+
+# Is Subsequence
+def isSubsequence(s: str, t: str) -> bool:
+    pass
+
 # Best Time to Buy and Sell Stock
 def maxProfit(prices: List[int]) -> int:
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     buy = float('inf')
     sell = 0
 
