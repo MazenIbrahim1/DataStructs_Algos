@@ -27,6 +27,7 @@ def calPoints(operations: List[str]) -> int:
 
 # Valid Parentheses
 def isValid(s: str) -> bool:
+    # Time and Space complexity = O(n)
     stack = []
 
     for char in s:
