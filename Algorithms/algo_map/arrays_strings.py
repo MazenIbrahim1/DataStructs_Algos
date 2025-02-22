@@ -61,3 +61,26 @@ def maxProfit(prices: List[int]) -> int:
             sell = profit
 
     return sell
+
+# Longest Common Prefix
+def longestCommonPrefix(strs: List[str]) -> str:
+    # Check if strs list is given or empty
+    if not strs:
+        return ""
+    
+    min_length = float('inf')
+    word = strs[0]
+
+    for s in strs:
+        if len(s) < min_length:
+            min_length = len(s)
+    
+    i = 0
+
+    while i < min_length:
+        for s in strs:
+            if s[i] != word[i]:
+                return s[:i]
+        i += 1
+
+    return s[:i]
