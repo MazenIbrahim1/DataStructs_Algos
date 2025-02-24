@@ -39,7 +39,32 @@ def mergeAlternately(word1: str, word2: str) -> str:
 
 # Roman to Integer
 def romanToInt(s: str) -> int:
-    pass
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
+    romanDict = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    }
+
+    result = 0
+    n = len(s)
+    i = 0
+
+    while i < n:
+        if i < n - 1 and romanDict[s[i + 1]] > romanDict[s[i]]:
+            diff = romanDict[s[i + 1]] - romanDict[s[i]]
+            result += diff
+            i += 2
+        else:
+            result += romanDict[s[i]]
+            i += 1
+    
+    return result
 
 # Is Subsequence
 def isSubsequence(s: str, t: str) -> bool:
