@@ -68,7 +68,22 @@ def romanToInt(s: str) -> int:
 
 # Is Subsequence
 def isSubsequence(s: str, t: str) -> bool:
-    pass
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
+    if len(s) > len(t):
+        return False
+    if s == "":
+        return True
+    
+    sub = 0
+    strin = 0
+
+    while sub < len(s) and strin < len(t):
+        if s[sub] == t[strin]:
+            sub += 1
+        strin += 1
+    
+    return len(s) == sub
 
 # Best Time to Buy and Sell Stock
 def maxProfit(prices: List[int]) -> int:
