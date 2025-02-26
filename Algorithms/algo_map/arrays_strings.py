@@ -104,6 +104,8 @@ def maxProfit(prices: List[int]) -> int:
 
 # Longest Common Prefix
 def longestCommonPrefix(strs: List[str]) -> str:
+    # Time Complexity: O(N * M)
+    # Space Complexity: O(1)
     # Check if strs list is given or empty
     if not strs:
         return ""
