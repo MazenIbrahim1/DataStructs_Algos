@@ -23,7 +23,7 @@ def containsDuplicate(nums: List[int]) -> bool:
 # Valid Anagram
 def isAnagram(s: str, t: str) -> bool:
     # Time Complexity: O(N)
-    # Space Complexity: O(N + M)
+    # Space Complexity: O(N + M) = O(N)
     if len(s) != len(t): return False
 
     s_dict = {}
