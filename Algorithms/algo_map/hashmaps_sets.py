@@ -19,3 +19,24 @@ def containsDuplicate(nums: List[int]) -> bool:
     # Time and Space complexity = O(n)
     num_set = set(nums)
     return len(num_set) != len(nums)
+
+# Valid Anagram
+def isAnagram(s: str, t: str) -> bool:
+    # Time Complexity: O(N)
+    # Space Complexity: O(N + M)
+    if len(s) != len(t): return False
+
+    s_dict = {}
+    t_dict = {}
+
+    for char in s:
+        s_dict[char] = s_dict.get(char, 0) + 1
+    
+    for char in t:
+        t_dict[char] = t_dict.get(char, 0) + 1
+
+    for char, val in s_dict.items():
+        if t_dict.get(char, 0) < val:
+            return False
+    
+    return True
