@@ -3,7 +3,8 @@ from typing import List
 
 # Binary Search
 def binary_search(nums: List[int], target: int) -> int:
-    # O(log n)
+    # Time Complexity: O(log n)
+    # Space Complexity: O(1)
     if not nums: return -1
 
     left, right = 0, len(nums) - 1
