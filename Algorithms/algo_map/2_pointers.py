@@ -1,6 +1,25 @@
 # Algo map leetcode questions
 from typing import List
 
+# Sorted Squares
+def sortedSquares(nums: List[int]) -> List[int]:
+    # Time complexity: O(n)
+    # Space complexity: O(n)
+    left = 0
+    right = len(nums) - 1
+    result = []
+
+    while left <= right:
+        if (nums[right] ** 2) > (nums[left] ** 2):
+            result.append(nums[right] ** 2)
+            right -= 1
+        else:
+            result.append(nums[left] ** 2)
+            left += 1
+
+    result.reverse()
+    return result
+
 # Reverse a string
 def reverseString(s: List[str]) -> None:
     # Time complexity: O(n)
