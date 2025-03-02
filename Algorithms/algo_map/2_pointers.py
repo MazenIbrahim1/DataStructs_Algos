@@ -31,3 +31,20 @@ def reverseString(s: List[str]) -> None:
         s[left], s[right] = s[right], s[left]
         left += 1
         right -=1
+
+# Two Sum
+def TwoSum(numbers: List[int], target: int) -> List[int]:
+    # Time complexity: O(n)
+    # Space complexity: O(1)
+    if numbers is None:
+        return []
+
+    left, right = 0, len(numbers) - 1
+
+    while left < right:
+        if numbers[left] + numbers[right] < target:
+            left += 1
+        elif numbers[left] + numbers[right] > target:
+            right -= 1
+        else:
+            return [left + 1, right + 1]
