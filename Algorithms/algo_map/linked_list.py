@@ -20,3 +20,7 @@ def deleteDuplicates(head: Optional[ListNode]) -> Optional[ListNode]:
             cursor = cursor.next
     
     return head
+
+# Reverse Linked List
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    pass
