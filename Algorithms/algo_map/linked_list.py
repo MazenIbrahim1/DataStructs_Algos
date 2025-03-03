@@ -23,4 +23,17 @@ def deleteDuplicates(head: Optional[ListNode]) -> Optional[ListNode]:
 
 # Reverse Linked List
 def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-    pass
+    # Time Complexity: O(N)
+    # Space Complexity: O(1)
+    prev = None
+    curr = head
+
+    while curr:
+        temp = curr.next
+        # Reverse
+        curr.next = prev
+        # Increment
+        prev = curr
+        curr = temp
+    
+    return prev
