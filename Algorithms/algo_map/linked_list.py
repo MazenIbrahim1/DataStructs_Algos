@@ -39,3 +39,5 @@ def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     return prev
 
 # Merge two sorted lists
+def mergeSortedLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    pass
