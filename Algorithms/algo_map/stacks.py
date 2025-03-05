@@ -42,3 +42,7 @@ def isValid(s: str) -> bool:
             stack.pop()
     
     return not stack
+
+# Evaluate Reverse Polish Notation
+def rpn(tokens: List[str]) -> int:
+    pass
