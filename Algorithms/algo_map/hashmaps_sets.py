@@ -1,4 +1,5 @@
 # Algo map leetcode questions
+from collections import defaultdict
 from typing import List
 
 # Jewels and Stones
@@ -40,3 +41,23 @@ def isAnagram(s: str, t: str) -> bool:
             return False
     
     return True
+
+# Maximum Number of Balloons
+def maxBalloons(text: str) -> int:
+    if len(text) < 7: return 0
+    
+    balloon = 'balloon'
+    counter = defaultdict(int)
+
+    for char in text:
+        if char in balloon:
+            counter[char] += 1
+    
+    if any(char not in counter for char in balloon):
+        return 0
+    else:
+        return min(counter['a'], counter['b'], counter['n'], counter['l']//2, counter['o']//2)
+    
+# Two Sum
+def twoSum(arr: List[int], target: int) -> List[int]:
+    pass
