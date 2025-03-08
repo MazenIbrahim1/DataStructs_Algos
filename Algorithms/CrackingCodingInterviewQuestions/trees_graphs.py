@@ -25,6 +25,11 @@ def list_of_depths(tree):
 def check_balanced(tree):
     pass
 
+# 4.5 Validate BST
+# Implement a function to check if a binary tree is a binary search tree.
+def validBST(tree):
+    pass
+
 # Main
 def main():
     pass
