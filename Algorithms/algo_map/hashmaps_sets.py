@@ -60,4 +60,13 @@ def maxBalloons(text: str) -> int:
     
 # Two Sum
 def twoSum(arr: List[int], target: int) -> List[int]:
-    pass
+    numMap = {}
+
+    for i in range(len(arr)):
+        complement = target - arr[i]
+        if complement in numMap:
+            return [numMap[complement], i]
+        numMap[arr[i]] = i
+    
+    return []
+
