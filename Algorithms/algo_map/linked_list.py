@@ -40,4 +40,6 @@ def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
 # Merge two sorted lists
 def mergeSortedLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    sorted_list = ListNode()
+    cursor1, cursor2 = list1, list2
     pass
