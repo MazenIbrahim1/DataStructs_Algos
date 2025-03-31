@@ -1,10 +1,28 @@
 # Questions 4.1 - 4.12
 
+from collections import deque
+
 # 4.1 Route between nodes
 # Given a directed graph, design an algorithm to find out whether there is a
 # route between two nodes.
 def route(graph, node1, node2):
-    pass
+    if node1 not in graph or node2 not in graph:
+        return False
+    
+    queue = deque([node1])
+    visited = set()
+    
+    while queue:
+        node = queue.popleft()
+        if node == node2:
+            return True
+        
+        visited.add(node)
+        for neighbor in graph.get(node, []):
+            if neighbor not in visited:
+                queue.append(neighbor)
+    
+    return False
 
 # 4.2 Minimal Tree
 # Given a sorted (increasing order) array with unique integer elements, write an algorithm
