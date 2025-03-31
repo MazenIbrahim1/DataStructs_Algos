@@ -2,6 +2,12 @@
 
 from collections import deque
 
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 # 4.1 Route between nodes
 # Given a directed graph, design an algorithm to find out whether there is a
 # route between two nodes.
