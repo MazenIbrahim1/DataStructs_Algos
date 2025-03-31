@@ -34,7 +34,13 @@ def route(graph, node1, node2):
 # Given a sorted (increasing order) array with unique integer elements, write an algorithm
 # to create a binary search tree with minimal height.
 def minimal_tree(arr):
-    pass
+    if not arr:
+        return None
+    mid = len(arr) // 2
+    root = TreeNode(arr[mid])
+    root.left = minimal_tree(arr[:mid])
+    root.right = minimal_tree(arr[mid+1:])
+    return root
 
 # 4.3 List of Depths
 # Given a binary tree, design an algorithm which creates a linked list of all the nodes
