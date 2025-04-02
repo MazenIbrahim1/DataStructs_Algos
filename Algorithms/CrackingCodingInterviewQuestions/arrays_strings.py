@@ -78,5 +78,9 @@ def main():
     for s, true_length in test_urls:
         print(f"URLify('{s}', {true_length}): {URLify(s[:true_length])}")
 
+    # Test Palindrome Permutation
+
+    # Test One Away
+
 if __name__ == "__main__":
     main()
